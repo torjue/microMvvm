@@ -4,11 +4,13 @@
     <title>MicroMvvm test</title>
 </head>
 
-<body id="home">
+<body>
 
-	<p data-text="name">name</p>
-	<p data-text="age">age</p>
-	<p data-text="sex">sex</p>
+	<div id="person">
+		<p data-text="name">name</p>
+		<p data-text="age">age</p>
+		<p data-text="sex">sex</p>
+	<div>
 
 	<script src="microMvvm.js"></script>
 	<script>
@@ -19,13 +21,17 @@
 			sex: "Male"
 		};
 
-		microMvvm.bind(viewModel);//, document.getElementById('home'));
+		document.addEventListener('DOMContentLoaded',function(){
 
-		setTimeout(function(){
-			viewModel.name = "Jane Doe";
-			viewModel.age = 21;
-			viewModel.sex = "Female";
-		}, 5000);
+			microMvvm.bind(viewModel, document.getElementById('person'));
+
+			setTimeout(function(){
+				viewModel.name = "Jane Doe";
+				viewModel.age = 21;
+				viewModel.sex = "Female";
+			}, 5000);
+
+		});
 
 	</script>
 
