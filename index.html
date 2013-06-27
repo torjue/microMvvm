@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MicroMvvm test</title>
+</head>
+
+<body id="home">
+
+	<p data-text="name">name</p>
+	<p data-text="age">age</p>
+	<p data-text="sex">sex</p>
+
+	<script src="microMvvm.js"></script>
+	<script>
+
+		var viewModel = {
+			name: "John Doe",
+			age: 41,
+			sex: "Male"
+		};
+
+		microMvvm.bind(viewModel);//, document.getElementById('home'));
+
+		setTimeout(function(){
+			viewModel.name = "Jane Doe";
+			viewModel.age = 21;
+			viewModel.sex = "Female";
+		}, 5000);
+
+	</script>
+
+</body>
+</html>
