@@ -22,6 +22,6 @@ A tiny MVVM framework. Not capable of much, and that's the entire point of it.
 	microMvvm.bind(viewModel);
 	
 	viewModel.name = "Jane Doe";
-    		
+
 ### License
 MIT: [torjue.mit-license.org](http://torjue.mit-license.org)

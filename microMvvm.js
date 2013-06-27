@@ -31,22 +31,22 @@
 			var propertyValue = viewModel[propertyName];
 
 			var get = function(){
-            	return propertyValue;
-            }
+				return propertyValue;
+			}
 
-            var set = function(newValue){
-        		propertyValue = newValue;
-        		updateTextBindings(propertyName, propertyValue);
-            };
+			var set = function(newValue){
+				propertyValue = newValue;
+				updateTextBindings(propertyName, propertyValue);
+			};
 
-            Object.defineProperty(viewModel, propertyName, {
-                configurable: true,
-                enumerable: true,
-                get: get,
-                set: set
-            });
+			Object.defineProperty(viewModel, propertyName, {
+				configurable: true,
+				enumerable: true,
+				get: get,
+				set: set
+			});
 
-        	updateTextBindings(propertyName, propertyValue);
+			updateTextBindings(propertyName, propertyValue);
 
 		});
 
